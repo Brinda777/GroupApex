@@ -71,6 +71,16 @@ public class LoginPage extends javax.swing.JFrame {
         Create_new_account.setText("Create new account");
         Create_new_account.setToolTipText("Creates new account");
         Create_new_account.setBorder(null);
+        Create_new_account.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Create_new_accountMouseClicked(evt);
+            }
+        });
+        Create_new_account.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Create_new_accountActionPerformed(evt);
+            }
+        });
 
         Forgot_password.setBackground(new java.awt.Color(242, 242, 242));
         Forgot_password.setForeground(new java.awt.Color(0, 0, 204));
@@ -121,29 +131,27 @@ public class LoginPage extends javax.swing.JFrame {
                 .addContainerGap(60, Short.MAX_VALUE))
         );
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Group 12.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/newpng.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 284, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 290, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(97, 97, 97)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(118, 118, 118)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(97, 97, 97)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(99, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(118, 118, 118))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -173,7 +181,23 @@ public class LoginPage extends javax.swing.JFrame {
     private void Forgot_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Forgot_passwordActionPerformed
 
         // TODO add your handling code here:
+        Forgotpassword fp = new Forgotpassword();
+        fp.setVisible(true);
     }//GEN-LAST:event_Forgot_passwordActionPerformed
+
+    private void Create_new_accountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Create_new_accountActionPerformed
+        // TODO add your handling code here:
+        Register rg = new Register();
+        rg.setVisible(true);
+        
+        
+        
+    }//GEN-LAST:event_Create_new_accountActionPerformed
+
+    private void Create_new_accountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Create_new_accountMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_Create_new_accountMouseClicked
 
     /**
      * @param args the command line arguments
