@@ -253,6 +253,8 @@ public class Register extends javax.swing.JFrame {
       } // TODO add your handling code here:
     }  
     
+    System.exit(0);
+    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
