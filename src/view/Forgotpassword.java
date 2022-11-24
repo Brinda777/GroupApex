@@ -41,6 +41,8 @@ public class Forgotpassword extends javax.swing.JFrame {
 
         jLabel1.setText("Phone No.");
 
+        pNum.setForeground(new java.awt.Color(255, 255, 255));
+
         jLabel2.setText("Q. Your favourite food?");
 
         jLabel3.setText("New Password");
