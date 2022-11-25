@@ -3,6 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import controller.UserController;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import model.User;
 
 /**
  *
@@ -176,6 +182,25 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void Sign_inActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Sign_inActionPerformed
         // TODO add your handling code here:
+        String pnum= Phone_number.getText();
+        String pas = Password.getText();
+        if (pnum.isEmpty()||pas.isEmpty()){
+            //Error dekhaune
+            JOptionPane.showMessageDialog(this,"All Fields are required.","value error",JOptionPane.ERROR_MESSAGE);
+        
+        
+        
+            
+        } else {
+
+                UserController uc=new UserController();
+                uc.loginPage(pnum,pas);
+//                
+//                if(pnum==DbPnum)
+                
+               
+         
+        }
     }//GEN-LAST:event_Sign_inActionPerformed
 
     private void Forgot_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Forgot_passwordActionPerformed
