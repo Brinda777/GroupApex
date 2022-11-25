@@ -147,6 +147,14 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Phone_numberActionPerformed"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JTextField" name="Password">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Password"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PasswordActionPerformed"/>
+              </Events>
+            </Component>
             <Component class="javax.swing.JButton" name="Sign_in">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -199,14 +207,6 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Forgot_passwordActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="Password">
-              <Properties>
-                <Property name="toolTipText" type="java.lang.String" value="Password"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PasswordActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

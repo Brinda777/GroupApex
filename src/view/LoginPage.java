@@ -35,10 +35,10 @@ public class LoginPage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         Phone_number = new javax.swing.JTextField();
+        Password = new javax.swing.JTextField();
         Sign_in = new javax.swing.JButton();
         Create_new_account = new javax.swing.JButton();
         Forgot_password = new javax.swing.JButton();
-        Password = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,6 +55,13 @@ public class LoginPage extends javax.swing.JFrame {
         Phone_number.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Phone_numberActionPerformed(evt);
+            }
+        });
+
+        Password.setToolTipText("Password");
+        Password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PasswordActionPerformed(evt);
             }
         });
 
@@ -92,13 +99,6 @@ public class LoginPage extends javax.swing.JFrame {
         Forgot_password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Forgot_passwordActionPerformed(evt);
-            }
-        });
-
-        Password.setToolTipText("Password");
-        Password.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PasswordActionPerformed(evt);
             }
         });
 
@@ -194,10 +194,25 @@ public class LoginPage extends javax.swing.JFrame {
         
             
         } else {
-
                 UserController uc=new UserController();
-                uc.loginPage(pnum,pas);
-//                
+                User newuser=uc.loginPage(pnum,pas);
+                String test_num=newuser.getPhoneNumber();
+                String test_pass=newuser.getPassword();
+                
+            if (pnum.equals(test_num)&&pas.equals(test_pass)){
+ //               JOptionPane.showMessageDialog(this,"logged in sucessfully","logged in",JOptionPane.PLAIN_MESSAGE);
+                  System.out.println("logged in");
+                
+            } else{
+                JOptionPane.showMessageDialog(this,"Invalid credentials","invalid!!",JOptionPane.ERROR_MESSAGE);
+            }
+
+
+                
+                
+                
+                
+                
 //                if(pnum==DbPnum)
                 
                
