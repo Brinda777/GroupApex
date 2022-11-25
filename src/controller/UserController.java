@@ -1,4 +1,5 @@
 package controller;
+import java.sql.*;
 
 import database.DbConnection;
 import model.User;
@@ -36,6 +37,30 @@ public class UserController {
     int result = dbConnection.manipulate(insertQuery);
     return result;
   }
+  public User forgotPassword(String phoneNumber,String favFood ){
+      dbConnection=new DbConnection();
+      String selectQuery=String.format("select * from users_data where phone_number='%s' and favourite_food='%s'", phoneNumber,favFood);
+      System.out.println(selectQuery);
+      ResultSet result=dbConnection.retrieve(selectQuery);
+      try {
+          while (result.next()){
+              String fName=result.getString("first_name");
+              String fFood=result.getString("favourite_food");
+              String email=result.getString("email");
+              String password=result.getString("pass");
+              User retrieve_user=new User(fName,null,0,null,email,password,fFood);
+//          System.out.println(result.getString("first_name"));
+          return  retrieve_user;
+          }
+          
+      } catch(SQLException e){
+      e.printStackTrace();}
+      return null;
+      
+      
+  }
+  
+  
 
 
   

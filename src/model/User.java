@@ -10,13 +10,13 @@ package model;
  */
 public class User {
 
-  private int age;
-  private String firstName;
-  private String lastName;
-  private String phoneNumber;
-  private String email;
-  private String password;
-  private String favouriteFood;
+  private int age=0;
+  private String firstName=null;
+  private String lastName=null;
+  private String phoneNumber=null;
+  private String email=null;
+  private String password=null;
+  private String favouriteFood=null;
   
    public User(
     String firstName,
