@@ -37,11 +37,13 @@ public class UserController {
     int result = dbConnection.manipulate(insertQuery);
     return result;
   }
-  public User forgotPassword(String phoneNumber,String favFood ){
+  public User forgotPassword(String phoneNumber,String favFood, String pw ){
       dbConnection=new DbConnection();
       String selectQuery=String.format("select * from users_data where phone_number='%s' and favourite_food='%s'", phoneNumber,favFood);
+      String updateQuery=String.format("update users_data set pass='%s' where phone_number='%s'",pw,phoneNumber);
       System.out.println(selectQuery);
       ResultSet result=dbConnection.retrieve(selectQuery);
+      int newResult=dbConnection.manipulate(updateQuery);
       try {
           while (result.next()){
               String fName=result.getString("first_name");
@@ -58,6 +60,7 @@ public class UserController {
       return null;
       
       
+
   }
   
   
@@ -65,3 +68,5 @@ public class UserController {
 
   
 }
+
+
