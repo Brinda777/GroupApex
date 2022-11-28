@@ -62,6 +62,29 @@ public class UserController {
       
 
   }
+  public User loginPage(String pnum,String pass){
+      dbConnection=new DbConnection();
+      String selectQuery=String.format("select phone_number,pass from users_data where phone_number='%s'",pnum);
+      System.out.println(selectQuery);
+      ResultSet result = dbConnection.retrieve(selectQuery);
+      try{
+          while(result.next()){
+              String DbPnum= result.getString("phone_number");
+              String Dbpass=result.getString("pass");
+              User retriver_user=new User(null,null,0,DbPnum,null,Dbpass,null);
+              
+              
+              
+              
+          return retriver_user; 
+          }
+          
+      }catch (SQLException e){
+          e.printStackTrace();
+      }
+      
+     return null;
+    }
   
   
 
