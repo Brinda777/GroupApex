@@ -3,8 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import controller.NotesController;
 import model.Todo;
 import controller.TodoController;
+import model.Notes;
 /**
  *
  * @author ASUS
@@ -142,6 +144,11 @@ public class Listtodo extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+                String text=addTo.getText();
+Todo newTodo = new Todo(text);        
+TodoController nc = new TodoController();
+int insertedTodo = nc.insertTodo(newTodo); 
+        
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
