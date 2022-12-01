@@ -130,6 +130,7 @@ public class Forgotpassword extends javax.swing.JFrame {
         // TODO add your handling code here:
         String phoneNumber=pNum.getText();
         String favouriteFood=fFood.getText();
+        String pw=nPass.getText();
         if (phoneNumber.isEmpty()||favouriteFood.isEmpty()){
             //Error dekhaune
             JOptionPane.showMessageDialog(this,"All Fields are required.","value error",JOptionPane.ERROR_MESSAGE);
@@ -140,7 +141,7 @@ public class Forgotpassword extends javax.swing.JFrame {
         } else {
 
                 UserController uc=new UserController();
-                User user_details=uc.forgotPassword(phoneNumber, favouriteFood);
+                User user_details=uc.forgotPassword(phoneNumber, favouriteFood,pw);
                 String fName=user_details.getPassword();
                            System.out.println("Your result is>>"+fName);
             

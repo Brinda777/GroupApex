@@ -200,7 +200,7 @@ public class LoginPage extends javax.swing.JFrame {
                 String test_pass=newuser.getPassword();
                 
             if (pnum.equals(test_num)&&pas.equals(test_pass)){
- //               JOptionPane.showMessageDialog(this,"logged in sucessfully","logged in",JOptionPane.PLAIN_MESSAGE);
+                JOptionPane.showMessageDialog(this,"logged in sucessfully","logged in",JOptionPane.PLAIN_MESSAGE);
                   System.out.println("logged in");
                 
             } else{
