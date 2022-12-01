@@ -42,6 +42,7 @@ public class UserController {
       String selectQuery=String.format("select * from users_data where phone_number='%s' and favourite_food='%s'", phoneNumber,favFood);
       System.out.println(selectQuery);
       ResultSet result=dbConnection.retrieve(selectQuery);
+      
       try {
           while (result.next()){
               String fName=result.getString("first_name");
