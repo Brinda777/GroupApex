@@ -1,6 +1,7 @@
 package controller;
 
 import database.DbConnection;
+import java.sql.*;
 import model.ExpenseModel;
 
 public class ExpenseController {
@@ -17,7 +18,7 @@ public class ExpenseController {
 
     // code to add user
     String insertQuery = String.format(
-      "INSERT INTO expenses_date VALUES( '%s', '%s','%s')",
+      "INSERT INTO expenses_data VALUES( '%s', '%s','%s')",
       expenseName,
       expenseAmount,
       expenseDate
@@ -26,6 +27,15 @@ public class ExpenseController {
     dbConnection = new DbConnection();
 
     int result = dbConnection.manipulate(insertQuery);
+    return result;
+  }
+  
+  public ResultSet getExpenses(){
+      dbConnection = new DbConnection();
+    String selectQuery = String.format(
+      "select * from expenses_data"
+    );
+    ResultSet result = dbConnection.retrieve(selectQuery);
     return result;
   }
 }

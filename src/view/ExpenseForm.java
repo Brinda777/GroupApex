@@ -3,8 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import java.sql.*;
 
 import controller.ExpenseController;
+import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
 import model.ExpenseModel;
 
 /**
@@ -18,6 +21,7 @@ public class ExpenseForm extends javax.swing.JFrame {
    */
   public ExpenseForm() {
     initComponents();
+    table_update();
   }
 
   /**
@@ -38,6 +42,8 @@ public class ExpenseForm extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -135,21 +141,45 @@ public class ExpenseForm extends javax.swing.JFrame {
                 .addGap(20, 20, 20))
         );
 
+        jTable1.setBackground(new java.awt.Color(20, 15, 15));
+        jTable1.setForeground(new java.awt.Color(255, 255, 255));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Expense", "Cost", "Date"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(61, 61, 61)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 578, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(301, Short.MAX_VALUE))
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(199, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -178,6 +208,34 @@ public class ExpenseForm extends javax.swing.JFrame {
     // TODO add your handling code here:
   }//GEN-LAST:event_costActionPerformed
 
+  
+  private void table_update(){
+      int c;
+      ExpenseController ec = new ExpenseController();
+      
+      try{
+          ResultSet resultingExpenses = ec.getExpenses();
+          ResultSetMetaData rsmd = resultingExpenses.getMetaData();
+          c = rsmd.getColumnCount();
+      while(resultingExpenses.next()){
+          DefaultTableModel Df = (DefaultTableModel)jTable1.getModel();
+          Vector v2 = new Vector();
+          for(int i = 1;i<=c;i++){
+              v2.add(resultingExpenses.getString("expense_name"));
+              v2.add(resultingExpenses.getString("expense_amount"));
+              v2.add(resultingExpenses.getString("expense_date"));
+
+          }
+          
+          Df.addRow(v2);
+      }
+      }
+      catch(SQLException e){
+          e.printStackTrace();
+      }
+
+  }
+  
   private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     String expName = name.getText();
     String expDate = date.getText();
@@ -187,7 +245,7 @@ public class ExpenseForm extends javax.swing.JFrame {
     ExpenseModel newExpense = new ExpenseModel(expName, expDate, expCost);
     ExpenseController ec = new ExpenseController();
     int insertedStudent = ec.insertExpense(newExpense);
-
+    
     if (insertedStudent > 0) {
       System.out.println("Expense Inserted");
     } else {
@@ -249,6 +307,8 @@ public class ExpenseForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField name;
     // End of variables declaration//GEN-END:variables
 }
