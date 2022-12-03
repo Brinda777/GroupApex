@@ -45,6 +45,10 @@
           <Dimension value="[1081, 600]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jPanel1FocusGained"/>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanel1MouseEntered"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -86,10 +90,6 @@
                       <EmptySpace pref="19" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="Sign_in" min="-2" pref="160" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="Phone_number" alignment="1" min="-2" pref="386" max="-2" attributes="0"/>
                                   <Component id="Password" min="-2" pref="386" max="-2" attributes="0"/>
@@ -97,13 +97,18 @@
                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Forgot_password" min="-2" pref="124" max="-2" attributes="0"/>
-                                  <Component id="Create_new_account" min="-2" pref="124" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="Sign_in" min="-2" pref="160" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="Forgot_password" min="-2" pref="124" max="-2" attributes="0"/>
+                          <Component id="Create_new_account" min="-2" pref="124" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -118,9 +123,9 @@
                       <Component id="Sign_in" min="-2" pref="57" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="Create_new_account" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="Forgot_password" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -129,8 +134,9 @@
             <Component class="javax.swing.JTextField" name="Phone_number">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="36" style="0"/>
+                  <Font name="Segoe UI" size="24" style="1"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value="Phone number"/>
                 <Property name="toolTipText" type="java.lang.String" value="Phone number"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -140,16 +146,29 @@
                 <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="66" red="ff" type="rgb"/>
                 </Property>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Text Cursor"/>
+                </Property>
+                <Property name="dragEnabled" type="boolean" value="true"/>
+                <Property name="highlighter" type="javax.swing.text.Highlighter" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="null"/>
+                </Property>
+                <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="Password"/>
+                </Property>
               </Properties>
               <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="Phone_numberFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="Phone_numberFocusLost"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Phone_numberActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="Password">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="36" style="0"/>
+                  <Font name="Segoe UI" size="24" style="1"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value="Password"/>
                 <Property name="toolTipText" type="java.lang.String" value="Password"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -158,6 +177,8 @@
                 </Property>
               </Properties>
               <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="PasswordFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="PasswordFocusLost"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PasswordActionPerformed"/>
               </Events>
             </Component>
@@ -225,6 +246,9 @@
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="APEX"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel1MouseEntered"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

@@ -9,6 +9,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.User;
+import java.awt.*;
+import javax.swing.*;
 
 /**
  *
@@ -21,6 +23,20 @@ public class LoginPage extends javax.swing.JFrame {
      */
     public LoginPage() {
         initComponents();
+        addPlaceholderStyle(Phone_number);
+        addPlaceholderStyle(Password);
+    }
+    public void addPlaceholderStyle(JTextField textField){
+        Font font = textField.getFont();
+        font = font.deriveFont(Font.PLAIN);
+        textField.setFont(font);
+        textField.setForeground(Color.gray);
+    }
+    public void removePlaceholderStyle(JTextField textField){
+        Font font = textField.getFont();
+        font = font.deriveFont(Font.PLAIN|Font.BOLD);
+        textField.setFont(font);
+        textField.setForeground(Color.black);
     }
 
     /**
@@ -45,22 +61,54 @@ public class LoginPage extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(38, 38, 38));
         jPanel1.setPreferredSize(new java.awt.Dimension(1081, 600));
+        jPanel1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jPanel1FocusGained(evt);
+            }
+        });
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel1MouseEntered(evt);
+            }
+        });
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-        Phone_number.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        Phone_number.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        Phone_number.setText("Phone number");
         Phone_number.setToolTipText("Phone number");
         Phone_number.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         Phone_number.setCaretColor(new java.awt.Color(255, 102, 51));
+        Phone_number.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Phone_number.setDragEnabled(true);
+        Phone_number.setHighlighter(null);
+        Phone_number.setNextFocusableComponent(Password);
+        Phone_number.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                Phone_numberFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                Phone_numberFocusLost(evt);
+            }
+        });
         Phone_number.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Phone_numberActionPerformed(evt);
             }
         });
 
-        Password.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        Password.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        Password.setText("Password");
         Password.setToolTipText("Password");
         Password.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        Password.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                PasswordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                PasswordFocusLost(evt);
+            }
+        });
         Password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PasswordActionPerformed(evt);
@@ -113,18 +161,19 @@ public class LoginPage extends javax.swing.JFrame {
                 .addContainerGap(19, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(Sign_in, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(111, 111, 111))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(Phone_number, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(14, 14, 14))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Forgot_password, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Create_new_account, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Sign_in, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(129, 129, 129))))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(145, 145, 145)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Forgot_password, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Create_new_account, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,13 +186,18 @@ public class LoginPage extends javax.swing.JFrame {
                 .addComponent(Sign_in, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Create_new_account)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Forgot_password)
-                .addGap(44, 44, 44))
+                .addGap(50, 50, 50))
         );
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/newapexpaex.png"))); // NOI18N
         jLabel1.setToolTipText("APEX");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel1MouseEntered(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -223,7 +277,7 @@ public class LoginPage extends javax.swing.JFrame {
                 
                
          
-        }
+        } 
     }//GEN-LAST:event_Sign_inActionPerformed
 
     private void Forgot_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Forgot_passwordActionPerformed
@@ -250,6 +304,56 @@ public class LoginPage extends javax.swing.JFrame {
     private void PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PasswordActionPerformed
+
+    private void Phone_numberFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Phone_numberFocusGained
+        // TODO add your handling code here:
+        if(Phone_number.getText().equals("Phone number")){
+            Phone_number.setText(null);
+            Phone_number.requestFocus();
+            removePlaceholderStyle(Phone_number);
+        }
+    }//GEN-LAST:event_Phone_numberFocusGained
+
+    private void PasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFocusGained
+        // TODO add your handling code here:
+            if(Password.getText().equals("Password")){
+            Password.setText(null);
+            Password.requestFocus();
+            removePlaceholderStyle(Password);
+        }
+    }//GEN-LAST:event_PasswordFocusGained
+
+    private void Phone_numberFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Phone_numberFocusLost
+        // TODO add your handling code here:
+        if(Phone_number.getText().length()==0){
+            addPlaceholderStyle(Phone_number);
+            Phone_number.setText("Phone number");
+            
+        }
+    }//GEN-LAST:event_Phone_numberFocusLost
+
+    private void PasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFocusLost
+        // TODO add your handling code here:
+            if(Password.getText().length()==0){
+            addPlaceholderStyle(Password);
+            Password.setText("Password");
+            
+        }
+    }//GEN-LAST:event_PasswordFocusLost
+
+    private void jPanel1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPanel1FocusGained
+        // TODO add your handling code her
+    }//GEN-LAST:event_jPanel1FocusGained
+
+    private void jPanel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseEntered
+        // TODO add your handling code here:
+        this.requestFocusInWindow();
+    }//GEN-LAST:event_jPanel1MouseEntered
+
+    private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
+        // TODO add your handling code here:
+        this.requestFocusInWindow();
+    }//GEN-LAST:event_jLabel1MouseEntered
 
     /**
      * @param args the command line arguments

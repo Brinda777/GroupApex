@@ -6,6 +6,8 @@ package view;
 
 import model.Todo;
 import controller.TodoController;
+import java.awt.*;
+import javax.swing.*;
 
 /**
  *
@@ -18,6 +20,20 @@ public class Listtodo extends javax.swing.JFrame {
      */
     public Listtodo() {
         initComponents();
+        addPlaceholderStyle(addTo);
+    }
+    
+    public void addPlaceholderStyle(JTextField textField){
+        Font font = textField.getFont();
+        font = font.deriveFont(Font.PLAIN);
+        textField.setFont(font);
+        textField.setForeground(Color.gray);
+    }
+    public void removePlaceholderStyle(JTextField textField){
+        Font font = textField.getFont();
+        font = font.deriveFont(Font.PLAIN);
+        textField.setFont(font);
+        textField.setForeground(Color.black);
     }
 
     /**
@@ -43,10 +59,30 @@ public class Listtodo extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel1MouseEntered(evt);
+            }
+        });
 
         addTo.setBackground(new java.awt.Color(242, 242, 242));
         addTo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        addTo.setText(" Add Todo");
+        addTo.setToolTipText("Add Task Todo");
         addTo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        addTo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                addToFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                addToFocusLost(evt);
+            }
+        });
+        addTo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addToActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -70,6 +106,11 @@ public class Listtodo extends javax.swing.JFrame {
         });
         jTable1.setToolTipText("");
         jTable1.setGridColor(new java.awt.Color(0, 153, 0));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jTable1MouseEntered(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         combo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -217,6 +258,37 @@ public class Listtodo extends javax.swing.JFrame {
     private void comboMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_comboMouseEntered
+
+    private void addToActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addToActionPerformed
+
+    private void addToFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addToFocusGained
+        // TODO add your handling code here:
+            if(addTo.getText().equals(" Add Todo")){
+            addTo.setText(null);
+            addTo.requestFocus();
+            removePlaceholderStyle(addTo);
+        }
+    }//GEN-LAST:event_addToFocusGained
+
+    private void addToFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addToFocusLost
+        // TODO add your handling code here:
+            if(addTo.getText().length()==0){
+            addPlaceholderStyle(addTo);
+            addTo.setText(" Add Todo");
+            
+        }
+    }//GEN-LAST:event_addToFocusLost
+
+    private void jPanel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseEntered
+        // TODO add your handling code here:'
+        this.requestFocusInWindow();
+    }//GEN-LAST:event_jPanel1MouseEntered
+
+    private void jTable1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseEntered
+
+    }//GEN-LAST:event_jTable1MouseEntered
 
     /**
      * @param args the command line arguments

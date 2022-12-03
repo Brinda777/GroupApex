@@ -42,6 +42,9 @@
           <Color blue="33" green="33" red="33" type="rgb"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanel1MouseEntered"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -91,6 +94,8 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="24" style="0"/>
             </Property>
+            <Property name="text" type="java.lang.String" value=" Add Todo"/>
+            <Property name="toolTipText" type="java.lang.String" value="Add Task Todo"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder>
@@ -99,6 +104,11 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="addToFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="addToFocusLost"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addToActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
@@ -154,6 +164,9 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTable1MouseEntered"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -184,9 +197,7 @@
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder justification="2" title="Actions">
-                  <Border PropertyName="innerBorder" info="null"/>
-                </TitledBorder>
+                <TitledBorder justification="2" title="Actions"/>
               </Border>
             </Property>
           </Properties>
