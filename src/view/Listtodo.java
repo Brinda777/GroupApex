@@ -61,11 +61,11 @@ public class Listtodo extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Sn.", "Todo task"
+                "Sn.", "Todo task", "Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
