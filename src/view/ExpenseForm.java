@@ -148,7 +148,7 @@ public class ExpenseForm extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Expense", "Cost", "Date"
+                "Expense", "Date", "Cost"
             }
         ) {
             Class[] types = new Class [] {
