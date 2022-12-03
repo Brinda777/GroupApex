@@ -10,8 +10,11 @@ package model;
  */
 public class Todo {
 private String text;
-public Todo(String text){
+private String status_str;
+
+public Todo(String text,String status_str){
     this.text=text;
+    this.status_str=status_str;
 }
 
 public void setText(String text){
@@ -22,5 +25,10 @@ public void setText(String text){
 public String getText(){
     return text;
 }
-    
+public void setStatus(String status_str){
+    this.status_str=status_str;
+}
+public String getStatus(){
+    return status_str;
+}
 }

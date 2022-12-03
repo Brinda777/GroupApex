@@ -14,12 +14,12 @@ import model.Todo;
 public class TodoController {
     DbConnection dbConnection;
     public int insertTodo(Todo todo){
-        
+        String myStatus=todo.getStatus();
         String myTodo = todo.getText();
-        String insertQuery = String.format(
-      "INSERT INTO todo_data VALUES('%s')",
-      myTodo
-    );
+        String insertQuery = String.format( "INSERT INTO todo_data(todo,status_text) VALUES('%s','%s')", myTodo,myStatus);
+//        insertQuery.setString(1,myTodo);
+//        insertQuery.setString(2,myStatus);
+        
         dbConnection = new DbConnection();
 
     int result = dbConnection.manipulate(insertQuery);
