@@ -80,10 +80,7 @@ public class UserController {
 
   public User loginPage(String pnum, String pass) {
     dbConnection = new DbConnection();
-    String selectQuery = String.format(
-      "select phone_number,pass from users_data where phone_number='%s'",
-      pnum
-    );
+    String selectQuery = String.format("select phone_number,pass from users_data where phone_number='%s'",pnum);
     System.out.println(selectQuery);
     ResultSet result = dbConnection.retrieve(selectQuery);
     try {

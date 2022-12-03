@@ -44,8 +44,9 @@ public class Listtodo extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
+        addTo.setBackground(new java.awt.Color(242, 242, 242));
         addTo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        addTo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        addTo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -67,18 +68,25 @@ public class Listtodo extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        jTable1.setToolTipText("");
+        jTable1.setGridColor(new java.awt.Color(0, 153, 0));
         jScrollPane1.setViewportView(jTable1);
 
         combo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todo", "Doing", "Done" }));
         combo.setToolTipText("Status");
+        combo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                comboMouseEntered(evt);
+            }
+        });
         combo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboActionPerformed(evt);
             }
         });
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Actions"));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Actions", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton1.setText("ADD");
@@ -189,6 +197,8 @@ public class Listtodo extends javax.swing.JFrame {
         Todo newTodo = new Todo(text,status_str);
         TodoController nc = new TodoController();
         int insertedTodo = nc.insertTodo(newTodo);
+        addTo.setText("");
+        combo.setSelectedItem("Todo");
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -203,6 +213,10 @@ public class Listtodo extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void comboMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboMouseEntered
 
     /**
      * @param args the command line arguments

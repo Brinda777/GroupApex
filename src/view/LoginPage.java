@@ -60,7 +60,7 @@ public class LoginPage extends javax.swing.JFrame {
 
         Password.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         Password.setToolTipText("Password");
-        Password.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Password.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         Password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PasswordActionPerformed(evt);
@@ -132,8 +132,8 @@ public class LoginPage extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addComponent(Phone_number, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Password)
-                .addGap(44, 44, 44)
+                .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Sign_in, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Create_new_account)
@@ -204,9 +204,13 @@ public class LoginPage extends javax.swing.JFrame {
             if (pnum.equals(test_num)&&pas.equals(test_pass)){
                 JOptionPane.showMessageDialog(this,"logged in sucessfully","logged in",JOptionPane.PLAIN_MESSAGE);
                   System.out.println("logged in");
+                  Phone_number.setText("");
+                  Password.setText("");
                 
             } else{
                 JOptionPane.showMessageDialog(this,"Invalid credentials","invalid!!",JOptionPane.ERROR_MESSAGE);
+                Phone_number.setText("");
+                Password.setText("");
             }
 
 
