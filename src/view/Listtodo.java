@@ -274,6 +274,10 @@ public class Listtodo extends javax.swing.JFrame {
         int insertedTodo = nc.insertTodo(newTodo);
         addTo.setText("");
         combo.setSelectedItem("Todo");
+        JOptionPane.showMessageDialog(this,"added","!!!!",JOptionPane.PLAIN_MESSAGE);
+        Listtodo main = new Listtodo();    
+        main.setVisible(true);
+        this.dispose();
         
     }//GEN-LAST:event_add_btnActionPerformed
 
@@ -295,6 +299,11 @@ public class Listtodo extends javax.swing.JFrame {
             
             dbConnection = new DbConnection();
             int result = dbConnection.manipulate(updateQuery);
+            JOptionPane.showMessageDialog(this,"edited","!!!!",JOptionPane.PLAIN_MESSAGE);
+            Listtodo main = new Listtodo();    
+            main.setVisible(true);
+            this.dispose();
+
       
     }//GEN-LAST:event_edit_buttonActionPerformed
 
