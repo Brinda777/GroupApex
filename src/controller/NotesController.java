@@ -4,6 +4,7 @@
  */
 package controller;
 import database.DbConnection;
+import java.sql.ResultSet;
 import model.Notes;
 /**
  *
@@ -25,4 +26,12 @@ public class NotesController {
     return result;
     }
     
+    public ResultSet getNotes(){
+      dbConnection = new DbConnection();
+    String selectQuery = String.format(
+      "select * from notes_data"
+    );
+    ResultSet result = dbConnection.retrieve(selectQuery);
+    return result;
+  }
 }

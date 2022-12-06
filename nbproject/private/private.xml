@@ -5,6 +5,10 @@
         <group>
             <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/controller/ExpenseController.java</file>
             <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/view/Listtodo.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/database/DbConnection.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/controller/UserController.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/controller/NotesController.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/view/Takenotes1.java</file>
             <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/controller/TodoController.java</file>
             <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/view/ExpenseForm.java</file>
         </group>

@@ -45,19 +45,19 @@ public class Listtodo extends javax.swing.JFrame {
 
     private void table_update(){
       int c;
-      ExpenseController ec = new ExpenseController();
+      TodoController ec = new TodoController();
       
       try{
-          ResultSet resultingExpenses = ec.getExpenses();
-          ResultSetMetaData rsmd = resultingExpenses.getMetaData();
+          ResultSet resultingTodo = ec.getTodo();
+          ResultSetMetaData rsmd = resultingTodo.getMetaData();
           c = rsmd.getColumnCount();
-      while(resultingExpenses.next()){
+      while(resultingTodo.next()){
           DefaultTableModel Df = (DefaultTableModel)jTable1.getModel();
           Vector v2 = new Vector();
           for(int i = 1;i<=c;i++){
-              v2.add(resultingExpenses.getString("sn"));
-              v2.add(resultingExpenses.getString("todo"));
-              v2.add(resultingExpenses.getString("status_text"));
+              v2.add(resultingTodo.getString("sn"));
+              v2.add(resultingTodo.getString("todo"));
+              v2.add(resultingTodo.getString("status_text"));
 
           }
           

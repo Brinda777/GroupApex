@@ -5,6 +5,7 @@
 package controller;
 
 import database.DbConnection;
+import java.sql.ResultSet;
 import model.Todo;
 
 /**
@@ -25,11 +26,14 @@ public class TodoController {
     int result = dbConnection.manipulate(insertQuery);
     return result;
     }
-    public int findTodo(Todo todo) {
-        String findQuery=String.format("select * from todo_data");
-        System.out.println(findQuery);
-        dbConnection= new DbConnection();
-        int result = dbConnection.manipulate(findQuery);
+    
+    public ResultSet getTodo(){
+      dbConnection = new DbConnection();
+    String selectQuery = String.format(
+      "select * from todo_data"
+    );
+    ResultSet result = dbConnection.retrieve(selectQuery);
     return result;
-    }
+  }
+    
 }
