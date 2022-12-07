@@ -4,7 +4,7 @@
  */
 package view;
 
-import controller.ExpenseController;
+import database.DbConnection;
 import model.Todo;
 import controller.TodoController;
 import java.awt.*;
@@ -83,9 +83,9 @@ public class Listtodo extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         combo = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        add_btn = new javax.swing.JButton();
+        edit_button = new javax.swing.JButton();
+        delete_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -138,6 +138,9 @@ public class Listtodo extends javax.swing.JFrame {
         jTable1.setToolTipText("");
         jTable1.setGridColor(new java.awt.Color(0, 153, 0));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jTable1MouseEntered(evt);
             }
@@ -160,27 +163,27 @@ public class Listtodo extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Actions", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton1.setText("ADD");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        add_btn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        add_btn.setText("ADD");
+        add_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                add_btnActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton2.setText("EDIT");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        edit_button.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        edit_button.setText("EDIT");
+        edit_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                edit_buttonActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton3.setText("DELETE");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        delete_btn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        delete_btn.setText("DELETE");
+        delete_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                delete_btnActionPerformed(evt);
             }
         });
 
@@ -193,11 +196,11 @@ public class Listtodo extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(delete_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(add_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(edit_button, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -205,11 +208,11 @@ public class Listtodo extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addComponent(add_btn)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(edit_button)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(delete_btn)
                 .addContainerGap(47, Short.MAX_VALUE))
         );
 
@@ -261,7 +264,7 @@ public class Listtodo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void add_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_btnActionPerformed
         // TODO add your handling code here:
         Object status = combo.getSelectedItem();
         String status_str = status.toString();
@@ -271,20 +274,42 @@ public class Listtodo extends javax.swing.JFrame {
         int insertedTodo = nc.insertTodo(newTodo);
         addTo.setText("");
         combo.setSelectedItem("Todo");
+        JOptionPane.showMessageDialog(this,"added","!!!!",JOptionPane.PLAIN_MESSAGE);
+        Listtodo main = new Listtodo();    
+        main.setVisible(true);
+        this.dispose();
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_add_btnActionPerformed
 
     private void comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_comboActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void edit_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_buttonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        DbConnection dbConnection;
+        DefaultTableModel Df = (DefaultTableModel)jTable1.getModel();
+        int selectedIndex=jTable1.getSelectedRow();
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+            int id= Integer.parseInt(Df.getValueAt(selectedIndex,0).toString());
+            String name=addTo.getText();
+            Object status = combo.getSelectedItem();
+            String status_str = status.toString();
+            String updateQuery= String.format("update todo_data set todo='%s',status_text='%s' where sn ='%s'",name,status_str,id);
+            
+            dbConnection = new DbConnection();
+            int result = dbConnection.manipulate(updateQuery);
+            JOptionPane.showMessageDialog(this,"edited","!!!!",JOptionPane.PLAIN_MESSAGE);
+            Listtodo main = new Listtodo();    
+            main.setVisible(true);
+            this.dispose();
+
+      
+    }//GEN-LAST:event_edit_buttonActionPerformed
+
+    private void delete_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_btnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_delete_btnActionPerformed
 
     private void comboMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboMouseEntered
         // TODO add your handling code here:
@@ -320,6 +345,15 @@ public class Listtodo extends javax.swing.JFrame {
     private void jTable1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseEntered
 
     }//GEN-LAST:event_jTable1MouseEntered
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel Df = (DefaultTableModel)jTable1.getModel();
+        int selectedIndex=jTable1.getSelectedRow();
+        
+        addTo.setText(Df.getValueAt(selectedIndex,1).toString());
+        combo.setSelectedItem(Df.getValueAt(selectedIndex,2).toString());
+    }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -358,10 +392,10 @@ public class Listtodo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField addTo;
+    private javax.swing.JButton add_btn;
     public javax.swing.JComboBox<String> combo;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton delete_btn;
+    private javax.swing.JButton edit_button;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
