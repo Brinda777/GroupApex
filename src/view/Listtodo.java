@@ -309,6 +309,19 @@ public class Listtodo extends javax.swing.JFrame {
 
     private void delete_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_btnActionPerformed
         // TODO add your handling code here:
+        DbConnection dbConnection;
+        DefaultTableModel Df = (DefaultTableModel)jTable1.getModel();
+        int selectedIndex=jTable1.getSelectedRow();
+
+            int id= Integer.parseInt(Df.getValueAt(selectedIndex,0).toString());
+            String updateQuery= String.format("delete from todo_data where sn ='%s'",id);
+            
+            dbConnection = new DbConnection();
+            int result = dbConnection.manipulate(updateQuery);
+            JOptionPane.showMessageDialog(this,"deleted","!!!!",JOptionPane.PLAIN_MESSAGE);
+            Listtodo main = new Listtodo();    
+            main.setVisible(true);
+            this.dispose();        
     }//GEN-LAST:event_delete_btnActionPerformed
 
     private void comboMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboMouseEntered
