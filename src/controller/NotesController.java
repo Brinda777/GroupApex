@@ -17,7 +17,7 @@ public class NotesController {
     public int insertNote(Notes note){
         String myNote = note.getText();
         String insertQuery = String.format(
-      "INSERT INTO notes_data VALUES('%s')",
+      "INSERT INTO notes_data(note) VALUES('%s')",
       myNote
     );
         dbConnection = new DbConnection();
