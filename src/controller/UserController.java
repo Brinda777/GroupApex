@@ -37,6 +37,28 @@ public class UserController {
     int result = dbConnection.manipulate(insertQuery);
     return result;
   }
+  
+  public void changePassword(String pNum,String oldPass,String newPass){
+      dbConnection = new DbConnection();
+      String selectQuery = String.format("Select * from users_data where phone_number = '%s'",pNum);
+      ResultSet result = dbConnection.retrieve(selectQuery);
+      
+      
+      try{
+          while(result.next()){
+              String prevPass = result.getString("pass");
+              if(prevPass.equals(oldPass)){
+                  String updateQuery = String.format("update users_data set pass='%s' where phone_number='%s'",
+              newPass,
+              pNum);
+                  dbConnection.manipulate(updateQuery);
+              }
+          }
+      }catch(SQLException e){
+          e.printStackTrace();
+      }
+      
+  }
 
   public User forgotPassword(String phoneNumber, String favFood, String pw) {
     dbConnection = new DbConnection();
@@ -80,10 +102,7 @@ public class UserController {
 
   public User loginPage(String pnum, String pass) {
     dbConnection = new DbConnection();
-    String selectQuery = String.format(
-      "select phone_number,pass from users_data where phone_number='%s'",
-      pnum
-    );
+    String selectQuery = String.format("select phone_number,pass from users_data where phone_number='%s'",pnum);
     System.out.println(selectQuery);
     ResultSet result = dbConnection.retrieve(selectQuery);
     try {
