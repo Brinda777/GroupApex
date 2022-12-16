@@ -19,7 +19,7 @@ import javax.swing.*;
 public class LoginPage extends javax.swing.JFrame {
 
     /**
-     * Creates new form loginpage
+     * Creates new form LoginPage
      */
     public LoginPage() {
         initComponents();
@@ -34,7 +34,7 @@ public class LoginPage extends javax.swing.JFrame {
     }
     public void removePlaceholderStyle(JTextField textField){
         Font font = textField.getFont();
-        font = font.deriveFont(Font.PLAIN|Font.BOLD);
+        font = font.deriveFont(Font.PLAIN);
         textField.setFont(font);
         textField.setForeground(Color.black);
     }
@@ -51,10 +51,10 @@ public class LoginPage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         Phone_number = new javax.swing.JTextField();
-        Password = new javax.swing.JTextField();
         Sign_in = new javax.swing.JButton();
         Create_new_account = new javax.swing.JButton();
         Forgot_password = new javax.swing.JButton();
+        Password = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -97,24 +97,6 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
 
-        Password.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        Password.setText("Password");
-        Password.setToolTipText("Password");
-        Password.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        Password.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                PasswordFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                PasswordFocusLost(evt);
-            }
-        });
-        Password.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PasswordActionPerformed(evt);
-            }
-        });
-
         Sign_in.setBackground(new java.awt.Color(0, 102, 204));
         Sign_in.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Sign_in.setText("Log In");
@@ -153,36 +135,49 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
 
+        Password.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        Password.setText("Password");
+        Password.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Password.setEchoChar('\u0000');
+        Password.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                PasswordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                PasswordFocusLost(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Phone_number, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(14, 14, 14))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(Sign_in, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(129, 129, 129))))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(145, 145, 145)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Forgot_password, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Create_new_account, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(Sign_in, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(129, 129, 129))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Phone_number, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(14, 14, 14))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(Phone_number, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(Password)
                 .addGap(18, 18, 18)
-                .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Sign_in, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Create_new_account)
@@ -242,30 +237,45 @@ public class LoginPage extends javax.swing.JFrame {
         // TODO add your handling code here:
         String pnum= Phone_number.getText();
         String pas = Password.getText();
-        if (pnum.isEmpty()||pas.isEmpty()){
-            //Error dekhaune
-            JOptionPane.showMessageDialog(this,"All Fields are required.","value error",JOptionPane.ERROR_MESSAGE);
+
+        
+        if (Phone_number.getText().trim().equals("Phone number")&& Password.getText().trim().equals("Password")){
+            //if both fields are not inserted
+            JOptionPane.showMessageDialog(this,"All Fields are required.","Error",JOptionPane.ERROR_MESSAGE);   
+        } 
+        else if (Phone_number.getText().trim().equals("Phone number")){
+            //If only password is inserted
+            JOptionPane.showMessageDialog(this,"All Fields are required.","Error",JOptionPane.ERROR_MESSAGE);   
+        } 
+        else if (Password.getText().trim().equals("Password")){
+            //If only 
+            JOptionPane.showMessageDialog(this,"All Fields are required.","Error",JOptionPane.ERROR_MESSAGE);   
+        } 
+
+
+
+        
+        else {
+        UserController uc=new UserController();
+        User newuser=uc.loginPage(pnum,pas);
+        String test_num=newuser.getPhoneNumber();
+        String test_pass=newuser.getPassword();
         
         
-        
-            
-        } else {
-                UserController uc=new UserController();
-                User newuser=uc.loginPage(pnum,pas);
-                String test_num=newuser.getPhoneNumber();
-                String test_pass=newuser.getPassword();
-                
-            if (pnum.equals(test_num)&&pas.equals(test_pass)){
-                JOptionPane.showMessageDialog(this,"logged in sucessfully","logged in",JOptionPane.PLAIN_MESSAGE);
-                  System.out.println("logged in");
-                  Phone_number.setText("");
-                  Password.setText("");
-                
-            } else{
-                JOptionPane.showMessageDialog(this,"Invalid credentials","invalid!!",JOptionPane.ERROR_MESSAGE);
-                Phone_number.setText("");
-                Password.setText("");
-            }
+
+        if(Phone_number.getText().trim().equals(test_num)&& Password.getText().trim().equals("Password")){
+            JOptionPane.showMessageDialog(this,"Insert Password","Message",JOptionPane.ERROR_MESSAGE);
+        }
+        else if(Phone_number.getText().trim().equals(test_num)&& !test_pass.equals(Password.getText().trim())){
+            JOptionPane.showMessageDialog(this,"Incorrect Password","Message",JOptionPane.ERROR_MESSAGE);
+        }
+        else if(pnum.equals(test_num)&&pas.equals(test_pass)){
+            JOptionPane.showMessageDialog(this,"logged in sucessfully","logged in",JOptionPane.PLAIN_MESSAGE);
+            System.out.println("logged in");
+            AfterLogin al=new AfterLogin();
+        al.setVisible(true);
+        this.dispose();
+        }
 
 
                 
@@ -285,12 +295,14 @@ public class LoginPage extends javax.swing.JFrame {
         // TODO add your handling code here:
         Forgotpassword fp = new Forgotpassword();
         fp.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_Forgot_passwordActionPerformed
 
     private void Create_new_accountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Create_new_accountActionPerformed
         // TODO add your handling code here:
         Register rg = new Register();
         rg.setVisible(true);
+        this.dispose();
         
         
         
@@ -301,10 +313,6 @@ public class LoginPage extends javax.swing.JFrame {
         
     }//GEN-LAST:event_Create_new_accountMouseClicked
 
-    private void PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PasswordActionPerformed
-
     private void Phone_numberFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Phone_numberFocusGained
         // TODO add your handling code here:
         if(Phone_number.getText().equals("Phone number")){
@@ -314,15 +322,6 @@ public class LoginPage extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Phone_numberFocusGained
 
-    private void PasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFocusGained
-        // TODO add your handling code here:
-            if(Password.getText().equals("Password")){
-            Password.setText(null);
-            Password.requestFocus();
-            removePlaceholderStyle(Password);
-        }
-    }//GEN-LAST:event_PasswordFocusGained
-
     private void Phone_numberFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Phone_numberFocusLost
         // TODO add your handling code here:
         if(Phone_number.getText().length()==0){
@@ -331,15 +330,6 @@ public class LoginPage extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_Phone_numberFocusLost
-
-    private void PasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFocusLost
-        // TODO add your handling code here:
-            if(Password.getText().length()==0){
-            addPlaceholderStyle(Password);
-            Password.setText("Password");
-            
-        }
-    }//GEN-LAST:event_PasswordFocusLost
 
     private void jPanel1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPanel1FocusGained
         // TODO add your handling code her
@@ -354,6 +344,27 @@ public class LoginPage extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.requestFocusInWindow();
     }//GEN-LAST:event_jLabel1MouseEntered
+
+    private void PasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFocusGained
+        // TODO add your handling code here:
+                if(Password.getText().equals("Password")){
+            Password.setText(null);
+            Password.requestFocus();
+            Password.setEchoChar('*');
+            removePlaceholderStyle(Password);
+        }
+   
+    }//GEN-LAST:event_PasswordFocusGained
+
+    private void PasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFocusLost
+        // TODO add your handling code here:
+            if(Password.getText().length()==0){
+            addPlaceholderStyle(Password);
+            Password.setText("Password");
+            Password.setEchoChar('\u0000');
+            
+        }
+    }//GEN-LAST:event_PasswordFocusLost
 
     /**
      * @param args the command line arguments
@@ -394,7 +405,7 @@ public class LoginPage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Create_new_account;
     private javax.swing.JButton Forgot_password;
-    private javax.swing.JTextField Password;
+    private javax.swing.JPasswordField Password;
     private javax.swing.JTextField Phone_number;
     private javax.swing.JButton Sign_in;
     private javax.swing.JLabel jLabel1;

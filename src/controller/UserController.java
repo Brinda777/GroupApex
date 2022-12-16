@@ -2,7 +2,9 @@ package controller;
 
 import database.DbConnection;
 import java.sql.*;
+import javax.swing.JOptionPane;
 import model.User;
+import view.LoginPage;
 
 public class UserController {
 
@@ -100,7 +102,7 @@ public class UserController {
     return null;
   }
 
-  public User loginPage(String pnum, String pass) {
+  public User loginPage(String pnum, String pas) {
     dbConnection = new DbConnection();
     String selectQuery = String.format("select phone_number,pass from users_data where phone_number='%s'",pnum);
     System.out.println(selectQuery);
@@ -109,6 +111,8 @@ public class UserController {
       while (result.next()) {
         String DbPnum = result.getString("phone_number");
         String Dbpass = result.getString("pass");
+
+
         User retriver_user = new User(
           null,
           null,
@@ -120,6 +124,8 @@ public class UserController {
         );
 
         return retriver_user;
+        
+        
       }
     } catch (SQLException e) {
       e.printStackTrace();

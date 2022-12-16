@@ -167,7 +167,11 @@ public class Takenotes1 extends javax.swing.JFrame {
         String text=Mynote.getText();
 Notes newNote = new Notes(text);        
 NotesController nc = new NotesController();
-int insertedNote = nc.insertNote(newNote);        // TODO add your handling code here:
+int insertedNote = nc.insertNote(newNote);  
+// TODO add your handling code here:
+        Takenotes1 main = new Takenotes1();    
+        main.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void MynoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MynoteActionPerformed

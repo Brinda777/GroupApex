@@ -15,15 +15,15 @@ public class DbConnection {
 
   public DbConnection() {
     try {
-      String username = "apexgroup1";
+      String username = "root";
 
-      String password = "apexgroup1";
+      String password = "root";
 
       Class.forName("com.mysql.cj.jdbc.Driver");
 
       connection =
         DriverManager.getConnection(
-          "jdbc:mysql://db4free.com/apexgroup1",
+          "jdbc:mysql://localhost:3306/apex",
           username,
           password
         );

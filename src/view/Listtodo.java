@@ -316,12 +316,19 @@ public class Listtodo extends javax.swing.JFrame {
             int id= Integer.parseInt(Df.getValueAt(selectedIndex,0).toString());
             String updateQuery= String.format("delete from todo_data where sn ='%s'",id);
             
+            int response= JOptionPane.showConfirmDialog(this, "Do you want to delete item?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            
+            if(response==JOptionPane.YES_OPTION){
             dbConnection = new DbConnection();
             int result = dbConnection.manipulate(updateQuery);
-            JOptionPane.showMessageDialog(this,"deleted","!!!!",JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Deleted", "Confirm", JOptionPane.PLAIN_MESSAGE);
             Listtodo main = new Listtodo();    
             main.setVisible(true);
-            this.dispose();        
+            this.dispose();  
+
+            }else if(response==JOptionPane.NO_OPTION){
+
+            }   
     }//GEN-LAST:event_delete_btnActionPerformed
 
     private void comboMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboMouseEntered

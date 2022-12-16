@@ -3,36 +3,25 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
             <file>file:/C:/Users/aasis/Desktop/GroupApex/src/view/Forgotpassword.java</file>
+            <file>file:/C:/Users/aasis/Desktop/GroupApex/src/view/logoSideways.png</file>
             <file>file:/C:/Users/aasis/Desktop/GroupApex/src/controller/UserController.java</file>
+            <file>file:/C:/Users/aasis/Desktop/GroupApex/src/view/AfterLogin.java</file>
+            <file>file:/C:/Users/aasis/Desktop/GroupApex/src/view/AboutPage.java</file>
             <file>file:/C:/Users/aasis/Desktop/GroupApex/src/model/User.java</file>
             <file>file:/C:/Users/aasis/Desktop/GroupApex/src/view/Takenotes1.java</file>
             <file>file:/C:/Users/aasis/Desktop/GroupApex/src/view/Register.java</file>
             <file>file:/C:/Users/aasis/Desktop/GroupApex/src/database/DbConnection.java</file>
             <file>file:/C:/Users/aasis/Desktop/GroupApex/src/view/LandingPage.java</file>
+            <file>file:/C:/Users/aasis/Desktop/GroupApex/src/model/Notes.java</file>
             <file>file:/C:/Users/aasis/Desktop/GroupApex/src/controller/NotesController.java</file>
             <file>file:/C:/Users/aasis/Desktop/GroupApex/src/model/Todo.java</file>
+            <file>file:/C:/Users/aasis/Desktop/GroupApex/src/view/ChangePassword.java</file>
             <file>file:/C:/Users/aasis/Desktop/GroupApex/src/controller/TodoController.java</file>
+            <file>file:/C:/Users/aasis/Desktop/GroupApex/src/controller/ExpenseController.java</file>
             <file>file:/C:/Users/aasis/Desktop/GroupApex/src/view/LoginPage.java</file>
             <file>file:/C:/Users/aasis/Desktop/GroupApex/src/view/ExpenseForm.java</file>
             <file>file:/C:/Users/aasis/Desktop/GroupApex/src/view/Listtodo.java</file>
-=======
-            <file>file:/C:/Users/prasa/Desktop/ApexProject/src/view/LoginPage.java</file>
-            <file>file:/C:/Users/prasa/Desktop/ApexProject/src/controller/UserController.java</file>
-            <file>file:/C:/Users/prasa/Desktop/ApexProject/src/view/LandingPage.java</file>
-            <file>file:/C:/Users/prasa/Desktop/ApexProject/src/view/logoSideways.png</file>
-            <file>file:/C:/Users/prasa/Desktop/ApexProject/src/view/Takenotes1.java</file>
-            <file>file:/C:/Users/prasa/Desktop/ApexProject/src/view/Register.java</file>
-            <file>file:/C:/Users/prasa/Desktop/ApexProject/src/model/ExpenseModel.java</file>
-            <file>file:/C:/Users/prasa/Desktop/ApexProject/src/view/ChangePassword.java</file>
-            <file>file:/C:/Users/prasa/Desktop/ApexProject/src/controller/ExpenseController.java</file>
-            <file>file:/C:/Users/prasa/Desktop/ApexProject/src/database/DbConnection.java</file>
-            <file>file:/C:/Users/prasa/Desktop/ApexProject/src/model/User.java</file>
-            <file>file:/C:/Users/prasa/Desktop/ApexProject/src/view/ExpenseForm.java</file>
-            <file>file:/C:/Users/prasa/Desktop/ApexProject/src/view/Listtodo.java</file>
-            <file>file:/C:/Users/prasa/Desktop/ApexProject/src/view/Forgotpassword.java</file>
->>>>>>> de52abff04b211c4e8c9cb6f30fd70c6a53c18bb
         </group>
     </open-files>
 </project-private>
