@@ -239,7 +239,8 @@ public class LoginPage extends javax.swing.JFrame {
         String pas = Password.getText();
 
         
-        if (Phone_number.getText().trim().equals("Phone number")&& Password.getText().trim().equals("Password")){
+        try{
+            if (Phone_number.getText().trim().equals("Phone number")&& Password.getText().trim().equals("Password")){
             //if both fields are not inserted
             JOptionPane.showMessageDialog(this,"All Fields are required.","Error",JOptionPane.ERROR_MESSAGE);   
         } 
@@ -275,19 +276,13 @@ public class LoginPage extends javax.swing.JFrame {
             AfterLogin al=new AfterLogin();
         al.setVisible(true);
         this.dispose();
-        }
-
-
-                
-                
-                
-                
-                
-//                if(pnum==DbPnum)
-                
+        }       
                
          
         } 
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Incorrect credentials", "incorrect", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_Sign_inActionPerformed
 
     private void Forgot_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Forgot_passwordActionPerformed
