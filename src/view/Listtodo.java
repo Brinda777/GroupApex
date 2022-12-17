@@ -309,12 +309,19 @@ public class Listtodo extends javax.swing.JFrame {
             String status_str = status.toString();
             String updateQuery= String.format("update todo_data set todo='%s',status_text='%s' where sn ='%s'",name,status_str,id);
             
+            int response= JOptionPane.showConfirmDialog(this, "Do you want to edit item?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            
+            if(response==JOptionPane.YES_OPTION){
             dbConnection = new DbConnection();
             int result = dbConnection.manipulate(updateQuery);
-            JOptionPane.showMessageDialog(this,"edited","!!!!",JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(this, "edited", "Confirmed", JOptionPane.PLAIN_MESSAGE);
             Listtodo main = new Listtodo();    
             main.setVisible(true);
-            this.dispose();
+            this.dispose();  
+
+            }else if(response==JOptionPane.NO_OPTION){
+
+            }  
 
       
     }//GEN-LAST:event_edit_buttonActionPerformed
