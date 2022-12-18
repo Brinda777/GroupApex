@@ -262,8 +262,8 @@ public class ExpenseForm extends javax.swing.JFrame {
           Vector v2 = new Vector();
           for(int i = 1;i<=c;i++){
               v2.add(resultingExpenses.getString("expense_name"));
-              v2.add(resultingExpenses.getString("expense_amount"));
               v2.add(resultingExpenses.getString("expense_date"));
+              v2.add(resultingExpenses.getString("expense_amount"));
 
           }
           
