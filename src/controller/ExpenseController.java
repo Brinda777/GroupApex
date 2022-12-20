@@ -14,7 +14,7 @@ public class ExpenseController {
 
     String expenseName = expenseModel.getExpenseName();
     String expenseAmount = expenseModel.getExpenseCost();
-    String expenseDate = expenseModel.getExpenseDate();
+    Date expenseDate = (Date) expenseModel.getExpenseDate();
 
     // code to add user
     String insertQuery = String.format(

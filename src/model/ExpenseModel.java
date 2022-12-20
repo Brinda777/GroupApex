@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.Date;
+
 /**
  *
  * @author prasa
@@ -12,13 +14,13 @@ public class ExpenseModel {
 
  
   private String expenseName;
-  private String expenseDate;
+  private Date expenseDate;
   private String expenseCost;
   
   
    public ExpenseModel(
     String expenseName,
-    String expenseDate,
+    Date expenseDate,
     String expenseCost
   ) {
     this.expenseName = expenseName;
@@ -32,7 +34,7 @@ public class ExpenseModel {
     this.expenseName = expenseName;
   }
 
-  public void setExpenseDate(String expenseDate) {
+  public void setExpenseDate(Date expenseDate) {
     this.expenseDate = expenseDate;
   }
 
@@ -47,7 +49,7 @@ public class ExpenseModel {
     return expenseName;
   }
 
-  public String getExpenseDate() {
+  public Date getExpenseDate() {
     return expenseDate;
   }
 
