@@ -272,7 +272,7 @@ public class ExpenseForm extends javax.swing.JFrame {
     java.sql.Date realExpDate = new java.sql.Date(expDate.getTime());
     String expCost = cost.getText();
     
-    System.out.println(expDate);
+    System.out.println(realExpDate);
     System.out.println("Hello world");
     System.out.println(expName);
 

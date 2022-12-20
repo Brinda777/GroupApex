@@ -14,13 +14,13 @@ public class ExpenseModel {
 
  
   private String expenseName;
-  private Date expenseDate;
+  private java.sql.Date expenseDate;
   private String expenseCost;
   
   
    public ExpenseModel(
     String expenseName,
-    Date expenseDate,
+    java.sql.Date expenseDate,
     String expenseCost
   ) {
     this.expenseName = expenseName;
@@ -34,7 +34,7 @@ public class ExpenseModel {
     this.expenseName = expenseName;
   }
 
-  public void setExpenseDate(Date expenseDate) {
+  public void setExpenseDate(java.sql.Date expenseDate) {
     this.expenseDate = expenseDate;
   }
 
@@ -49,7 +49,7 @@ public class ExpenseModel {
     return expenseName;
   }
 
-  public Date getExpenseDate() {
+  public java.sql.Date getExpenseDate() {
     return expenseDate;
   }
 

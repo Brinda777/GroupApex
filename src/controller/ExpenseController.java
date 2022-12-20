@@ -14,11 +14,11 @@ public class ExpenseController {
 
     String expenseName = expenseModel.getExpenseName();
     String expenseAmount = expenseModel.getExpenseCost();
-    Date expenseDate = (Date) expenseModel.getExpenseDate();
+    java.sql.Date expenseDate = expenseModel.getExpenseDate();
 
     // code to add user
     String insertQuery = String.format(
-      "INSERT INTO expenses_data VALUES( '%s', '%s','%s')",
+      "INSERT INTO expenses_data(expense_name,expense_amount,expense_date) VALUES( '%s', '%s','%s')",
       expenseName,
       expenseAmount,
       expenseDate
