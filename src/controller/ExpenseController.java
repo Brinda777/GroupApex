@@ -13,7 +13,7 @@ public class ExpenseController {
     // getting expense info
 
     String expenseName = expenseModel.getExpenseName();
-    String expenseAmount = expenseModel.getExpenseCost();
+    int expenseAmount = expenseModel.getExpenseCost();
     String expenseDate = expenseModel.getExpenseDate();
 
     // code to add user

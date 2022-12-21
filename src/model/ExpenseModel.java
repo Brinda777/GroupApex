@@ -13,13 +13,13 @@ public class ExpenseModel {
  
   private String expenseName;
   private String expenseDate;
-  private String expenseCost;
+  private int expenseCost;
   
   
    public ExpenseModel(
     String expenseName,
     String expenseDate,
-    String expenseCost
+    int expenseCost
   ) {
     this.expenseName = expenseName;
     this.expenseDate = expenseDate;
@@ -36,7 +36,7 @@ public class ExpenseModel {
     this.expenseDate = expenseDate;
   }
 
-  public void setExpenseCost(String expenseCost) {
+  public void setExpenseCost(int expenseCost) {
     this.expenseCost = expenseCost;
   }
 
@@ -51,7 +51,7 @@ public class ExpenseModel {
     return expenseDate;
   }
 
-  public String getExpenseCost() {
+  public int getExpenseCost() {
     return expenseCost;
   }
 
