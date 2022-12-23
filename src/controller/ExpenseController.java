@@ -30,12 +30,21 @@ public class ExpenseController {
     return result;
   }
   
-  public ResultSet getExpenses(){
+  public ResultSet getExpenses(String item){
       dbConnection = new DbConnection();
-    String selectQuery = String.format(
+      if(item.equals("All")){
+          String selectQuery = String.format(
       "select * from expenses_data"
     );
-    ResultSet result = dbConnection.retrieve(selectQuery);
-    return result;
+          ResultSet result = dbConnection.retrieve(selectQuery);
+        return result;
+      }else{
+          String selectQuery = String.format
+        ("select * from expenses_data WHERE monthname(expense_date) = '%s'",item);
+          ResultSet result = dbConnection.retrieve(selectQuery);
+        return result;
+      }
+    
+    
   }
 }
