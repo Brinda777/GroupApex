@@ -184,7 +184,7 @@ public class AfterLogin extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ExpenseForm ep=new ExpenseForm();
+        Expenses ep=new Expenses();
         ep.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
