@@ -17,7 +17,7 @@ public class User {
   private String email=null;
   private String password=null;
   private String favouriteFood=null;
-  
+  public static int id;
    public User(
     String firstName,
     String lastName,
@@ -63,6 +63,8 @@ public class User {
   public void setFavouriteFood(String favouriteFood) {
     this.favouriteFood = favouriteFood;
   }
+  
+ 
 
   public int getAge() {
     return age;

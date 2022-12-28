@@ -11,6 +11,7 @@ import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.ExpenseModel;
+import model.User;
 
 /**
  *
@@ -46,7 +47,8 @@ public class ExpenseForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        list1 = new java.awt.List();
+        totalVal = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         name = new javax.swing.JTextField();
         cost = new javax.swing.JTextField();
@@ -62,11 +64,18 @@ public class ExpenseForm extends javax.swing.JFrame {
         monthDropdown = new javax.swing.JComboBox<>();
         filterButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+<<<<<<< HEAD
         limit1 = new javax.swing.JTextField();
+=======
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        total = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+>>>>>>> 547a575 (Bookmarking the notes done and added extra functionalities to the expense tracker)
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(38, 38, 38));
+        totalVal.setBackground(new java.awt.Color(38, 38, 38));
 
         jPanel2.setBackground(new java.awt.Color(67, 29, 29));
 
@@ -199,6 +208,7 @@ public class ExpenseForm extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 0));
         jLabel4.setText("Limit :");
@@ -229,10 +239,57 @@ public class ExpenseForm extends javax.swing.JFrame {
                                         .addComponent(filterButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                             .addGap(26, 26, 26))))
                 .addContainerGap(52, Short.MAX_VALUE))
+=======
+        jLabel4.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Your total is:");
+
+        jLabel5.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+
+        total.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        total.setForeground(new java.awt.Color(255, 255, 255));
+        total.setText("total");
+
+        jButton4.setBackground(new java.awt.Color(102, 255, 102));
+        jButton4.setText("How much to save?");
+
+        javax.swing.GroupLayout totalValLayout = new javax.swing.GroupLayout(totalVal);
+        totalVal.setLayout(totalValLayout);
+        totalValLayout.setHorizontalGroup(
+            totalValLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(totalValLayout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addGroup(totalValLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(totalValLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(monthDropdown, javax.swing.GroupLayout.Alignment.TRAILING, 0, 148, Short.MAX_VALUE)
+                        .addComponent(filterButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 578, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(78, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, totalValLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(total)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addGap(136, 136, 136))
+            .addGroup(totalValLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(76, 76, 76)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
+>>>>>>> 547a575 (Bookmarking the notes done and added extra functionalities to the expense tracker)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        totalValLayout.setVerticalGroup(
+            totalValLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(totalValLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -242,12 +299,19 @@ public class ExpenseForm extends javax.swing.JFrame {
                     .addComponent(limit1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(filterButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addGap(42, 42, 42)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(18, 18, 18)
+                .addGroup(totalValLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel6)
+                    .addComponent(total))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addGroup(totalValLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4))
                 .addGap(28, 28, 28))
         );
 
@@ -255,23 +319,72 @@ public class ExpenseForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(totalVal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 12, Short.MAX_VALUE)
+                .addComponent(totalVal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-  private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
-    // TODO add your handling code here:
-  }//GEN-LAST:event_nameActionPerformed
+    private void filterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filterButtonActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0);
 
-  private void costActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_costActionPerformed
-    // TODO add your handling code here:
-  }//GEN-LAST:event_costActionPerformed
+        table_update();    // TODO add your handling code here:
+    }//GEN-LAST:event_filterButtonActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        ExpenseChart eChart = new ExpenseChart();
+        eChart.setVisible(true);
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        AfterLogin al=new AfterLogin();
+        al.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String expName = name.getText();
+        java.util.Date expDate = date.getDate();
+        java.sql.Date realExpDate = new java.sql.Date(expDate.getTime());
+        String expCost = cost.getText();
+
+        System.out.println(realExpDate);
+        System.out.println("Hello world");
+        System.out.println(expName);
+
+        // TODO add your handling code here:
+        ExpenseModel newExpense = new ExpenseModel(expName, realExpDate, expCost);
+        ExpenseController ec = new ExpenseController();
+        int insertedExpense = ec.insertExpense(newExpense);
+        System.out.println("THE INSERTED EXPENSE IS:");
+        System.out.println(insertedExpense);
+
+        if (insertedExpense > 0) {
+            System.out.println("Expense Inserted");
+            ExpenseForm main = new ExpenseForm();
+            main.setVisible(true);
+            this.dispose();
+        } else {
+            System.out.println("Expense not inserted");
+        } // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void costActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_costActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_costActionPerformed
+
+    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameActionPerformed
 
   
   private void table_update(){
@@ -280,6 +393,9 @@ public class ExpenseForm extends javax.swing.JFrame {
 
       int c;
       ExpenseController ec = new ExpenseController();
+      double tot = ec.getTotalValue();
+      String s = Double.toString(tot);
+      total.setText("Rs: " + s);
       
       try{
           ResultSet resultingExpenses = ec.getExpenses(selectedItem);
@@ -307,6 +423,7 @@ public class ExpenseForm extends javax.swing.JFrame {
 
   }
   
+<<<<<<< HEAD
   private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     String expName = name.getText();
     java.util.Date expDate = date.getDate();
@@ -359,6 +476,8 @@ public class ExpenseForm extends javax.swing.JFrame {
         table_update();    // TODO add your handling code here:
     }//GEN-LAST:event_filterButtonActionPerformed
 
+=======
+>>>>>>> 547a575 (Bookmarking the notes done and added extra functionalities to the expense tracker)
   /**
    * @param args the command line arguments
    */
@@ -411,16 +530,28 @@ public class ExpenseForm extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+<<<<<<< HEAD
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField limit1;
+=======
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private java.awt.List list1;
+>>>>>>> 547a575 (Bookmarking the notes done and added extra functionalities to the expense tracker)
     private javax.swing.JComboBox<String> monthDropdown;
     private javax.swing.JTextField name;
+    private javax.swing.JLabel total;
+    private javax.swing.JPanel totalVal;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,6 +6,7 @@ package controller;
 import database.DbConnection;
 import java.sql.ResultSet;
 import model.Notes;
+import model.User;
 /**
  *
  * @author Dell
@@ -17,8 +18,8 @@ public class NotesController {
     public int insertNote(Notes note){
         String myNote = note.getText();
         String insertQuery = String.format(
-      "INSERT INTO notes_data(note) VALUES('%s')",
-      myNote
+      "INSERT INTO notes_data(note,uid) VALUES('%s',%d)",
+      myNote,User.id
     );
         dbConnection = new DbConnection();
 
@@ -29,7 +30,16 @@ public class NotesController {
     public ResultSet getNotes(){
       dbConnection = new DbConnection();
     String selectQuery = String.format(
-      "select * from notes_data"
+      "select * from notes_data where uid = %d",User.id
+    );
+    ResultSet result = dbConnection.retrieve(selectQuery);
+    return result;
+  }
+    
+     public ResultSet getBookmarkedNotes(){
+      dbConnection = new DbConnection();
+    String selectQuery = String.format(
+      "select * from notes_data where bookmarked > %d and uid = %d",0,User.id
     );
     ResultSet result = dbConnection.retrieve(selectQuery);
     return result;

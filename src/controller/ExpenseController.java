@@ -3,6 +3,7 @@ package controller;
 import database.DbConnection;
 import java.sql.*;
 import model.ExpenseModel;
+import model.User;
 
 public class ExpenseController {
 
@@ -18,10 +19,11 @@ public class ExpenseController {
 
     // code to add user
     String insertQuery = String.format(
-      "INSERT INTO expenses_data(expense_name,expense_amount,expense_date) VALUES( '%s', '%s','%s')",
+      "INSERT INTO expenses_data(expense_name,expense_amount,expense_date,uid) VALUES( '%s', '%s','%s',%d)",
       expenseName,
       expenseAmount,
-      expenseDate
+      expenseDate,
+      User.id
     );
 
     dbConnection = new DbConnection();
@@ -34,7 +36,7 @@ public class ExpenseController {
       dbConnection = new DbConnection();
       if(item.equals("All")){
           String selectQuery = String.format(
-      "select * from expenses_data"
+      "select * from expenses_data WHERE uid=%d",User.id
     );
           ResultSet result = dbConnection.retrieve(selectQuery);
         return result;
@@ -46,5 +48,20 @@ public class ExpenseController {
       }
     
     
+  }
+  
+  public double getTotalValue(){
+      dbConnection = new DbConnection();
+      String getQuery = String.format("SELECT SUM(expense_amount) FROM expenses_data WHERE uid = %d",User.id);
+      ResultSet rs = dbConnection.retrieve(getQuery);
+      try{
+          if(rs.next()){
+              double total = rs.getDouble(1);
+              return total;
+          }
+      }catch(SQLException e){
+          e.printStackTrace();
+      }
+      return 0;
   }
 }

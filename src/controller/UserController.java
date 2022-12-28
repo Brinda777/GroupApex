@@ -24,7 +24,7 @@ public class UserController {
 
     // code to add user
     String insertQuery = String.format(
-      "INSERT INTO users_data VALUES('%s', '%s', %d, '%s', '%s', '%s','%s')",
+      "INSERT INTO users_data(first_name,last_name,age,phone_number,email,pass,favourite_food) VALUES('%s', '%s', %d, '%s', '%s', '%s','%s')",
       userFirstName,
       userLastName,
       userAge,
@@ -104,13 +104,16 @@ public class UserController {
 
   public User loginPage(String pnum, String pas) {
     dbConnection = new DbConnection();
-    String selectQuery = String.format("select phone_number,pass from users_data where phone_number='%s'",pnum);
+    String selectQuery = String.format("select phone_number,pass,id from users_data where phone_number='%s'",pnum);
     System.out.println(selectQuery);
     ResultSet result = dbConnection.retrieve(selectQuery);
     try {
       while (result.next()) {
         String DbPnum = result.getString("phone_number");
         String Dbpass = result.getString("pass");
+        int cUId = result.getInt("id");
+        System.out.println(cUId);
+        User.id = cUId;
 
 
         User retriver_user = new User(

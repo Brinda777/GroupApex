@@ -274,8 +274,8 @@ public class LoginPage extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"logged in sucessfully","logged in",JOptionPane.PLAIN_MESSAGE);
             System.out.println("logged in");
             AfterLogin al=new AfterLogin();
-        al.setVisible(true);
-        this.dispose();
+            al.setVisible(true);
+            this.dispose();   
         }       
                
          
