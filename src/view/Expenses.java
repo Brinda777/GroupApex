@@ -12,6 +12,7 @@ import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.ExpenseModel;
+import model.User;
 import view.AfterLogin;
 import view.ExpenseChart;
 import view.Savings;
@@ -28,11 +29,15 @@ public class Expenses extends javax.swing.JFrame {
     public Expenses() {
         initComponents();
         table_update();
+        
+       
     }
     
     private void table_update(){
       String selectedItem = monthDropdown.getSelectedItem().toString();
       System.out.println(selectedItem);
+      
+       
 
       int c;
       ExpenseController ec = new ExpenseController();
@@ -312,6 +317,14 @@ public class Expenses extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    ProcessBuilder pb = new ProcessBuilder("python3", "home/prasanna/Documents/NewProjectTest/GroupApex/src/view/expensesChart.py", Integer.toString(User.id));
+
+    try {
+      Process p = pb.start();
+      p.waitFor();
+    } catch (Exception e) {
+      System.out.println("Error: " + e);
+    }
         ExpenseChart ec = new ExpenseChart();
         ec.setVisible(true);
         this.dispose();

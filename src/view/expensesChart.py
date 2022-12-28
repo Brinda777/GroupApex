@@ -1,4 +1,7 @@
 # import mysql connector
+# use mysql-connector 
+# pip install mysql-connector-python
+# pip install mysql-connector-python-rf
 import mysql.connector
 # to make a pie chart from mysql table named expenses which has 3 columns named  name , cost and date
 
@@ -10,11 +13,16 @@ mydb = mysql.connector.connect(
   database="apex"
 )
 
+# store command line arguments in variables
+# import sys
+import sys
+uid = sys.argv[1]
+
 # create a cursor
 mycursor = mydb.cursor()
 
 # execute the query
-mycursor.execute("SELECT expense_name, expense_amount FROM expenses_data")
+mycursor.execute("SELECT expense_name, expense_amount FROM expenses_data WHERE uid = "+uid+"")
 
 # fetch all the records
 result = mycursor.fetchall()
