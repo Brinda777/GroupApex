@@ -42,7 +42,7 @@ public class ExpenseController {
         return result;
       }else{
           String selectQuery = String.format
-        ("select * from expenses_data WHERE monthname(expense_date) = '%s'",item);
+        ("select * from expenses_data WHERE monthname(expense_date) = '%s' and uid=%d",item,User.id);
           ResultSet result = dbConnection.retrieve(selectQuery);
         return result;
       }

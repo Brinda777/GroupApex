@@ -3,35 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/model/ExpenseModel.java</file>
-            <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/view/Listtodo.java</file>
-            <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/view/Register.java</file>
-            <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/controller/UserController.java</file>
-            <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/controller/NotesController.java</file>
-            <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/view/Forgotpassword.java</file>
-            <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/model/Notes.java</file>
-            <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/view/Takenotes1.java</file>
-            <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/view/AfterLogin.java</file>
-            <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/controller/ExpenseController.java</file>
-            <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/database/DbConnection.java</file>
-            <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/model/Todo.java</file>
-            <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/view/ExpenseChart.java</file>
-            <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/controller/TodoController.java</file>
-            <file>file:/C:/Users/ASUS/Desktop/GroupApex/src/view/ExpenseForm.java</file>
-=======
-            <file>file:/home/prasanna/Documents/GroupApex/src/view/ExpenseForm.java</file>
-            <file>file:/home/prasanna/Documents/GroupApex/src/controller/NotesController.java</file>
-            <file>file:/home/prasanna/Documents/GroupApex/src/view/Takenotes1.java</file>
-            <file>file:/home/prasanna/Documents/GroupApex/src/view/AfterLogin.java</file>
-            <file>file:/home/prasanna/Documents/GroupApex/src/view/Register.java</file>
-            <file>file:/home/prasanna/Documents/GroupApex/src/view/LoginPage.java</file>
-            <file>file:/home/prasanna/Documents/GroupApex/src/view/Listtodo.java</file>
-            <file>file:/home/prasanna/Documents/GroupApex/src/controller/TodoController.java</file>
-            <file>file:/home/prasanna/Documents/GroupApex/src/model/User.java</file>
-            <file>file:/home/prasanna/Documents/GroupApex/src/controller/UserController.java</file>
-            <file>file:/home/prasanna/Documents/GroupApex/src/controller/ExpenseController.java</file>
->>>>>>> 547a575 (Bookmarking the notes done and added extra functionalities to the expense tracker)
+            <file>file:/home/prasanna/Documents/NewProjectTest/GroupApex/src/view/Expenses.java</file>
+            <file>file:/home/prasanna/Documents/NewProjectTest/GroupApex/src/view/AfterLogin.java</file>
         </group>
     </open-files>
 </project-private>
