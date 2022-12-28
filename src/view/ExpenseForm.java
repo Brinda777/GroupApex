@@ -64,14 +64,11 @@ public class ExpenseForm extends javax.swing.JFrame {
         monthDropdown = new javax.swing.JComboBox<>();
         filterButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-<<<<<<< HEAD
         limit1 = new javax.swing.JTextField();
-=======
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         total = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
->>>>>>> 547a575 (Bookmarking the notes done and added extra functionalities to the expense tracker)
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -208,38 +205,6 @@ public class ExpenseForm extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel4.setText("Limit :");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 578, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(limit1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(80, 80, 80)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(monthDropdown, javax.swing.GroupLayout.Alignment.TRAILING, 0, 148, Short.MAX_VALUE)
-                                        .addComponent(filterButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                            .addGap(26, 26, 26))))
-                .addContainerGap(52, Short.MAX_VALUE))
-=======
         jLabel4.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Your total is:");
@@ -285,7 +250,6 @@ public class ExpenseForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35))
->>>>>>> 547a575 (Bookmarking the notes done and added extra functionalities to the expense tracker)
         );
         totalValLayout.setVerticalGroup(
             totalValLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -331,31 +295,31 @@ public class ExpenseForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void filterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filterButtonActionPerformed
+    private void filterButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
 
         table_update();    // TODO add your handling code here:
-    }//GEN-LAST:event_filterButtonActionPerformed
+    }                                            
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         ExpenseChart eChart = new ExpenseChart();
         eChart.setVisible(true);
         this.dispose();        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }                                        
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
         AfterLogin al=new AfterLogin();
         al.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }                                        
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         String expName = name.getText();
         java.util.Date expDate = date.getDate();
         java.sql.Date realExpDate = new java.sql.Date(expDate.getTime());
-        String expCost = cost.getText();
+        int expCost = Integer.parseInt(cost.getText());
 
         System.out.println(realExpDate);
         System.out.println("Hello world");
@@ -376,7 +340,7 @@ public class ExpenseForm extends javax.swing.JFrame {
         } else {
             System.out.println("Expense not inserted");
         } // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }                                        
 
     private void costActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_costActionPerformed
         // TODO add your handling code here:
@@ -423,61 +387,12 @@ public class ExpenseForm extends javax.swing.JFrame {
 
   }
   
-<<<<<<< HEAD
-  private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    String expName = name.getText();
-    java.util.Date expDate = date.getDate();
-    java.sql.Date realExpDate = new java.sql.Date(expDate.getTime());
-      int expCost = Integer.parseInt(cost.getText());
-    
-    int limit=Integer.parseInt(limit1.getText());
-    if(expCost>=(limit));
-    {
-        JOptionPane.showMessageDialog(this,"Limit Reached!");
-    }
-    
-    
-    System.out.println(realExpDate);
-    System.out.println("Hello world");
-    System.out.println(expName);
-
-    // TODO add your handling code here:
-    ExpenseModel newExpense = new ExpenseModel(expName, realExpDate, expCost);
-    ExpenseController ec = new ExpenseController();
-    int insertedStudent = ec.insertExpense(newExpense);
-    
-    if (insertedStudent > 0) {
-      System.out.println("Expense Inserted");
-        ExpenseForm main = new ExpenseForm();    
-        main.setVisible(true);
-        this.dispose();
-    } else {
-      System.out.println("Expense not inserted");
-    } // TODO add your handling code here:
-  }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        AfterLogin al=new AfterLogin();
-        al.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        ExpenseChart eChart = new ExpenseChart();
-        eChart.setVisible(true);
-        this.dispose();        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void filterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filterButtonActionPerformed
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
 
         table_update();    // TODO add your handling code here:
     }//GEN-LAST:event_filterButtonActionPerformed
 
-=======
->>>>>>> 547a575 (Bookmarking the notes done and added extra functionalities to the expense tracker)
   /**
    * @param args the command line arguments
    */
@@ -535,20 +450,14 @@ public class ExpenseForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-<<<<<<< HEAD
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField limit1;
-=======
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private java.awt.List list1;
->>>>>>> 547a575 (Bookmarking the notes done and added extra functionalities to the expense tracker)
     private javax.swing.JComboBox<String> monthDropdown;
     private javax.swing.JTextField name;
     private javax.swing.JLabel total;
